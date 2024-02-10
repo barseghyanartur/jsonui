@@ -85,8 +85,6 @@ class JsonDiff(QWidget):
             highlight_differences(
                 self.right_editor, diff
             )  # TODO: Get rid of the 2nd one
-            # This is where you'd call a more sophisticated version of `highlight_differences`
-            # For now, just indicating there are differences
             print("Differences detected.")
         else:
             print("No differences.")
