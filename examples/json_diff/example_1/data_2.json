@@ -1,0 +1,12 @@
+{
+  "name": "John Doe",
+  "age": 31,
+  "isEmployed": false,
+  "address": {
+    "street": "123 Elm St",
+    "city": "Anywhere",
+    "zip": "12345"
+  },
+  "hobbies": ["reading", "cycling", "traveling"],
+  "pets": ["dog"]
+}

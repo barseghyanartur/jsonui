@@ -1,0 +1,29 @@
+{
+  "company": "Tech Innovations Inc.",
+  "employees": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "position": "Software Engineer",
+      "skills": ["Python", "JavaScript", "C++"]
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "position": "Project Manager",
+      "skills": ["Agile methodologies", "Communication", "Time Management"]
+    }
+  ],
+  "location": {
+    "office1": {
+      "city": "New York",
+      "address": "22 Acacia Avenue",
+      "occupied": true
+    },
+    "office2": {
+      "city": "San Francisco",
+      "address": "99 Pacific Blvd",
+      "occupied": false
+    }
+  }
+}

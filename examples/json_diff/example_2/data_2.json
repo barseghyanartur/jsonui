@@ -1,0 +1,30 @@
+{
+  "company": "Tech Innovations LLC",
+  "employees": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "position": "Senior Software Engineer",
+      "skills": ["Python", "JavaScript", "C++", "Rust"]
+    },
+    {
+      "id": 3,
+      "name": "Emily Davis",
+      "position": "UX Designer",
+      "skills": ["Design", "Prototyping", "User Research"]
+    }
+  ],
+  "location": {
+    "office1": {
+      "city": "New York",
+      "address": "22 Acacia Avenue",
+      "occupied": true
+    },
+    "office3": {
+      "city": "Los Angeles",
+      "address": "88 Sunset Blvd",
+      "occupied": true
+    }
+  },
+  "founded": 2005
+}

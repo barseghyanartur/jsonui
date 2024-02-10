@@ -1,0 +1,12 @@
+{
+  "name": "John Doe",
+  "age": 30,
+  "isEmployed": true,
+  "address": {
+    "street": "123 Elm St",
+    "city": "Somewhere",
+    "zip": "12345"
+  },
+  "hobbies": ["reading", "cycling", "hiking"]
+}
+highlight_differences(self.right_editor, diff)
