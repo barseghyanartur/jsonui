@@ -13,7 +13,7 @@ jsonui
 .. _Read the Docs: http://jsonui.readthedocs.io/
 .. _Contributor guidelines: https://fakepy.readthedocs.io/en/latest/contributor_guidelines.html
 
-UI to support JSON.
+UI/GUI for working with JSON.
 
 .. image:: https://img.shields.io/pypi/v/jsonui.svg
    :target: https://pypi.python.org/pypi/jsonui
@@ -39,8 +39,6 @@ UI to support JSON.
     :target: https://coveralls.io/github/barseghyanartur/jsonui?branch=main
     :alt: Coverage
 
-`jsonui`_ is a UI/GUI tool for working with JSON.
-
 Features
 ========
 - Convert Python dict into JSON.
@@ -55,8 +53,8 @@ Prerequisites
 
 Installation
 ============
-pipx
-----
+pipx (recommended)
+------------------
 
 .. code-block:: sh
 
@@ -68,6 +66,29 @@ pip
 .. code-block:: sh
 
     pip install jsonui
+
+Usage
+=====
+Run
+---
+
+.. code-block:: sh
+
+    jsonui
+
+Screenshots
+-----------
+**Convert Python dict to JSON**
+
+.. image:: docs/screenshots/python_dict_to_json.png
+   :target: docs/screenshots/python_dict_to_json.png
+   :alt: Python dict to JSON
+
+**JSON diff**
+
+.. image:: docs/screenshots/json_diff.png
+   :target: docs/screenshots/json_diff.png
+   :alt: JSON diff
 
 Documentation
 =============
