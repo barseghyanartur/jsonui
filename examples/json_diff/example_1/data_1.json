@@ -9,4 +9,3 @@
   },
   "hobbies": ["reading", "cycling", "hiking"]
 }
-highlight_differences(self.right_editor, diff)
