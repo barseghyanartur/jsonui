@@ -51,20 +51,19 @@ jobs:
           - "3.11"
     steps:
     - name: Install system requirements
-      run: sudo apt-get update && sudo apt-get install -y \
-           libxcb-icccm4 \
-           libxcb-image0 \
-           libxcb-keysyms1 \
-           libxcb-randr0 \
-           libxcb-randr0-dev \
-           libxcb-render-util0 \
-           libxcb-shape0-dev \
-           libxcb-xinerama0 \
-           libxcb-xinerama0-dev \
-           libxcb-xkb-dev \
-           libxcb-xtest0-dev \
-           libxkbcommon-x11-0 \
-           xvfb
+      run: sudo apt-get update && sudo apt-get install -y libxcb-icccm4 |
+           sudo apt-get install -y libxcb-image0 |
+           sudo apt-get install -y libxcb-keysyms1 |
+           sudo apt-get install -y libxcb-randr0 |
+           sudo apt-get install -y libxcb-randr0-dev |
+           sudo apt-get install -y libxcb-render-util0 |
+           sudo apt-get install -y libxcb-shape0-dev |
+           sudo apt-get install -y libxcb-xinerama0 |
+           sudo apt-get install -y libxcb-xinerama0-dev |
+           sudo apt-get install -y libxcb-xkb-dev |
+           sudo apt-get install -y libxcb-xtest0-dev |
+           sudo apt-get install -y libxkbcommon-x11-0 |
+           sudo apt-get install -y xvfb
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
