@@ -94,7 +94,7 @@ def highlight_differences(editor, diff):
     # Simplified approach: Iterate through the changes and highlight
     for change_type, changes in diff.items():
         if change_type == "dictionary_item_added":
-            # Handle new items (simplified example, assumes we can find the 
+            # Handle new items (simplified example, assumes we can find the
             # position)
             for added_path in changes:
                 # Here, you'd need to find the line number for the added item
@@ -117,7 +117,7 @@ def find_line_number_for_path(editor, path):
 
     :param editor: QScintilla editor instance containing JSON text.
     :param path: String path in the format "root['key']['subkey']" or similar.
-    :return: Line number (int) where the path points to in the editor, 
+    :return: Line number (int) where the path points to in the editor,
         or -1 if not found.
     """
     # Convert the path string to a list of keys (assuming path is well-formed)
@@ -152,7 +152,7 @@ def find_line_number_for_path(editor, path):
             if not keys:  # If no more keys, path fully matched
                 break
 
-            # Reset nesting level after matching a key (assuming keys are 
+            # Reset nesting level after matching a key (assuming keys are
             # unique at each level)
             current_nesting_level = 0
 
