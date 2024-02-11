@@ -50,6 +50,8 @@ jobs:
         python-version:
           - "3.11"
     steps:
+    - name: Install system requirements
+      run: sudo apt-get update && sudo apt-get install -y xvfb
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
@@ -61,6 +63,6 @@ jobs:
     - name: Install dependencies
       run: python -m pip install --no-cache-dir -e .[all]
     - name: Run test suite
-      run: pytest -vrx -s
+      run: xvfb-run pytest -vrx -s
       env:
         PYTEST_ADDOPTS: "--durations=10"
