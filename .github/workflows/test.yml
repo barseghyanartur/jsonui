@@ -56,8 +56,13 @@ jobs:
            libxcb-image0 \
            libxcb-keysyms1 \
            libxcb-randr0 \
+           libxcb-randr0-dev \
            libxcb-render-util0 \
+           libxcb-shape0-dev \
            libxcb-xinerama0 \
+           libxcb-xinerama0-dev \
+           libxcb-xkb-dev \
+           libxcb-xtest0-dev \
            libxkbcommon-x11-0 \
            xvfb
     - uses: actions/checkout@v3
