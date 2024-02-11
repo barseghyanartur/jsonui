@@ -51,7 +51,7 @@ jobs:
           - "3.11"
     steps:
     - name: Install system requirements
-      run: sudo apt-get update && sudo apt-get install -y xvfb
+      run: sudo apt-get update && sudo apt-get install -y xvfb libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
@@ -66,3 +66,4 @@ jobs:
       run: xvfb-run pytest -vrx -s
       env:
         PYTEST_ADDOPTS: "--durations=10"
+        QT_DEBUG_PLUGINS: 1
