@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from jsonui import DictToJsonConverter, JsonDiff
+from jsonui import DictToJsonConverter, JsonDiff, JsonToDictConverter
 from PyQt5.QtCore import Qt
 from PyQt5.QtTest import QTest
 from PyQt5.QtWidgets import QApplication
@@ -30,6 +30,23 @@ class TestDictToJsonConverter(unittest.TestCase):
 
         actual_output = converter.output_text_edit.toPlainText()
         self.assertEqual(actual_output, expected_output)
+
+
+class TestJsonToDictConverter(unittest.TestCase):
+    def test_conversion(self):
+        converter = JsonToDictConverter()
+
+        input_json = (
+            '{"hi": "you", "isTrue": true, "isFalse": false, "isNone": null}'
+        )
+        expected_output = json.loads(input_json)
+
+        QTest.qWaitForWindowExposed(converter)
+        QTest.keyClicks(converter.input_text_edit, input_json)
+        QTest.mouseClick(converter.convert_button, Qt.LeftButton)
+
+        actual_output = converter.output_text_edit.toPlainText()
+        self.assertEqual(eval(actual_output), expected_output)
 
 
 class TestJsonDiff(unittest.TestCase):
