@@ -15,13 +15,14 @@ from PyQt5.QtWidgets import (
 )
 
 __title__ = "jsonui"
-__version__ = "0.1"
+__version__ = "0.2"
 __author__ = "Artur Barseghyan <artur.barseghyan@gmail.com>"
 __copyright__ = "2023-2024 Artur Barseghyan"
 __license__ = "MIT"
 __all__ = (
     "DictToJsonConverter",
     "JsonDiff",
+    "JsonToDictConverter",
     "MainApplication",
     "apply_highlight",
     "find_line_number_for_path",
@@ -218,6 +219,51 @@ class DictToJsonConverter(QWidget):
 
 
 # **************************************************************************
+# ************************* JSON to Dict converter *************************
+# **************************************************************************
+
+
+class JsonToDictConverter(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.init_ui()
+
+    def init_ui(self):
+        layout = QVBoxLayout()
+
+        # Create the text edit widgets for input and output
+        self.input_text_edit = QTextEdit()
+        self.input_text_edit.setPlaceholderText("Enter JSON here...")
+        self.output_text_edit = QTextEdit()
+        self.output_text_edit.setPlaceholderText(
+            "Python dict will appear here..."
+        )
+        self.output_text_edit.setReadOnly(True)  # Make output read-only
+
+        # Create the convert button
+        self.convert_button = QPushButton("Convert to Dict")
+        self.convert_button.clicked.connect(self.convert_input)
+
+        # Add widgets to the layout
+        layout.addWidget(self.input_text_edit)
+        layout.addWidget(self.convert_button)
+        layout.addWidget(self.output_text_edit)
+
+        self.setLayout(layout)
+
+    def convert_input(self):
+        # Get the input text
+        input_text = self.input_text_edit.toPlainText()
+        try:
+            # Convert the JSON string to a Python dict
+            input_dict = json.loads(input_text)
+            # Display the Python dict in the output text edit
+            self.output_text_edit.setText(str(input_dict))
+        except json.JSONDecodeError as e:
+            self.output_text_edit.setText(f"Error: {str(e)}")
+
+
+# **************************************************************************
 # ******************************* Main app *********************************
 # **************************************************************************
 
@@ -232,9 +278,11 @@ class MainApplication(QWidget):
         self.layout = QVBoxLayout()
         self.tabs = QTabWidget()
         self.dict_to_json_tab = DictToJsonConverter()
+        self.json_to_dict_tab = JsonToDictConverter()
         self.json_diff_tab = JsonDiff()
 
         self.tabs.addTab(self.dict_to_json_tab, "Dict to JSON Converter")
+        self.tabs.addTab(self.json_to_dict_tab, "JSON to Dict Converter")
         self.tabs.addTab(self.json_diff_tab, "JSON Diff")
 
         self.layout.addWidget(self.tabs)

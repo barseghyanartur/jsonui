@@ -42,6 +42,7 @@ UI/GUI for working with JSON.
 Features
 ========
 - Convert Python dict into JSON.
+- Convert JSON to Python dict.
 - Show diffs between two JSONs.
 
 Prerequisites
