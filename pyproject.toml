@@ -2,7 +2,7 @@
 name = "jsonui"
 description = "UI tools for JSON."
 readme = "README.rst"
-version = "0.1"
+version = "0.2"
 dependencies = ["PyQt5", "QScintilla", "deepdiff"]
 authors = [
     {name = "Artur Barseghyan", email = "artur.barseghyan@gmail.com"},
